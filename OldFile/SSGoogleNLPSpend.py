@@ -5,8 +5,7 @@ Created on Thu Jun  6 14:48:37 2013
 @author: hok1
 """
 
-import SSGoogleSpend as spend
-import SSGoogleNLP as ssnlp
+from OldFile import SSGoogleNLP as ssnlp, SSGoogleSpend as spend
 import sys
 from operator import add
 from gdata.service import BadAuthentication

@@ -5,7 +5,7 @@ Created on Mon Jun  3 15:34:46 2013
 @author: hok1
 """
 
-import SSGoogleSpend as ssgs
+from OldFile import SSGoogleSpend as ssgs
 from nltk.stem import PorterStemmer
 from nltk import pos_tag
 
