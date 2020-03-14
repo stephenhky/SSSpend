@@ -330,3 +330,7 @@ src/
 
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
+
+# Google API Credentials
+client_secrets.json
+storage.json
