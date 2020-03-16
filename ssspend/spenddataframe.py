@@ -13,3 +13,5 @@ def get_month_dataframe(spreadsheet, month):
     df = df[['Date', 'Place', 'Category', 'City', 'Debit', 'Comment', 'Individual',
              'Payment Method']]
     return df
+
+# https://github.com/nithinmurali/pygsheets
