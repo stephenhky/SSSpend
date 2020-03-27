@@ -1,7 +1,6 @@
 
-from collections import defaultdict
-
 from tqdm import tqdm
+import pandas as pd
 
 from .knowledge import months
 from .spenddataframe import get_month_dataframe
@@ -20,9 +19,9 @@ def generate_summary_dict(spreadsheet, category_preprocessor=category_preprocess
     return monthly_summary_dict
 
 
-# Or use pandas?
 def generate_summary_df(monthly_summary_dict):
-    yearly_summary_dict = defaultdict(lambda : 0)
-    for monthly_summary in monthly_summary_dict.values():
-        for category, amount in monthly_summary:
-            yearly_summary_dict[category] += amount
+    summary_df = pd.DataFrame.from_dict(monthly_summary_dict).fillna(0)
+    summary_df['Total'] = summary_df.apply(lambda row: sum([row[month] for month in months]),
+                                           axis=1)
+    summary_df = summary_df.sort_values(by='Total', ascending=False)
+    return summary_df
