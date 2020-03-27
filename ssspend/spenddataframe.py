@@ -14,4 +14,3 @@ def get_month_dataframe(spreadsheet, month):
              'Payment Method']]
     return df
 
-# https://github.com/nithinmurali/pygsheets
