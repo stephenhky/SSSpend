@@ -7,6 +7,10 @@ def readme():
         return f.read()
 
 
+def install_requirements():
+    return [package_string.strip() for package_string in open('requirements.txt', 'r')]
+
+
 setup(name='ssspend',
       version="0.0.1",
       description="SS Spending Tools",
@@ -25,9 +29,7 @@ setup(name='ssspend',
       packages=['ssspend',],
       # package_data={},
       setup_requires=[],
-      install_requires=[
-          'numpy', 'pandas', 'tqdm',
-      ],
+      install_requires=install_requirements(),
       tests_require=[
           'unittest2',
       ],
