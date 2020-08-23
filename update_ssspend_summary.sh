@@ -2,4 +2,4 @@
 
 URL=$1
 
-python3 update_ssspend_summary.py $URL
+python update_ssspend_summary.py $URL
