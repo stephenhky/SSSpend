@@ -334,5 +334,6 @@ src/
 # Google API Credentials
 client_secrets.json
 client_secret.json
+client_json.json
 storage.json
 sheets.googleapis.com-python.json
