@@ -12,7 +12,7 @@ def install_requirements():
 
 
 setup(name='ssspend',
-      version="0.0.1",
+      version="0.0.2",
       description="SS Spending Tools",
       long_description="Spending Tools on Google Sheet",
       classifiers=[

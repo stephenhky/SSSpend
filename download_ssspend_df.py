@@ -1,7 +1,7 @@
 
 import argparse
 
-from ssspend.spenddataframe import get_google_spreadsheet, get_month_dataframe
+from ssspend.spenddataframe import get_google_spreadsheet_from_oauth2, get_month_dataframe
 from ssspend.knowledge import months
 
 
@@ -16,7 +16,7 @@ argparser.add_argument('--xlsx', default=False, action='store_true', help='Save 
 if __name__ == '__main__':
     args = argparser.parse_args()
 
-    spreadsheet = get_google_spreadsheet(args.client_json_file, args.storage_json, args.url)
+    spreadsheet = get_google_spreadsheet_from_oauth2(args.client_json_file, args.storage_json, args.url)
     dataframes = [get_month_dataframe(spreadsheet, month) for month in months]
     combined_dataframe = dataframes[0]
     for dataframe in dataframes[1:]:

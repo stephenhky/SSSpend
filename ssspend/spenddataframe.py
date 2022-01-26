@@ -1,8 +1,14 @@
 
 from gsheets import Sheets
 
-def get_google_spreadsheet(my_client_secret, my_client_storage, url):
+def get_google_spreadsheet_from_oauth2(my_client_secret, my_client_storage, url):
     sheets = Sheets.from_files(my_client_secret, my_client_storage)
+    spreadsheet = sheets.get(url)
+    return spreadsheet
+
+
+def get_google_spreadsheet_from_apikey(apikey, url):
+    sheets = Sheets.from_developer_key(apikey)
     spreadsheet = sheets.get(url)
     return spreadsheet
 
