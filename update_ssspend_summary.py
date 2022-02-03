@@ -27,6 +27,6 @@ if __name__ == '__main__':
         spreadsheet = get_google_spreadsheet_from_apikey(args.apikey, args.url)
     monthly_summary_dict = generate_summary_dict(spreadsheet)
     summary_df = generate_summary_df(monthly_summary_dict)
-    update_summary_googlespreadsheet(args.url, summary_df)
+    update_summary_googlespreadsheet(args.url, summary_df, service_account_file=args.serviceaccount)
 
 

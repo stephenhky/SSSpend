@@ -31,8 +31,8 @@ def generate_summary_df(monthly_summary_dict):
 
 
 # reference: https://stackoverflow.com/questions/42775419/update-existing-google-sheet-with-a-pandas-data-frame-and-gspread
-def update_summary_googlespreadsheet(url, summary_df):
-    gc = pygsheets.authorize()
+def update_summary_googlespreadsheet(url, summary_df, service_account_file=None):
+    gc = pygsheets.authorize() if service_account_file is None else pygsheets.authorize(service_file=service_account_file)
     sh = gc.open_by_url(url)
     for wks in sh._sheet_list:
         if wks.title == 'Summary':
