@@ -37,7 +37,7 @@ def lambda_handler(event, context):
     spreadsheet = get_google_spreadsheet_from_service_account(service_account_info, url)
     monthly_summary_dict = generate_summary_dict(spreadsheet)
     summary_df = generate_summary_df(monthly_summary_dict)
-    update_summary_googlespreadsheet(url, summary_df)
+    update_summary_googlespreadsheet(url, summary_df, service_account_file='service_account.json')
 
     return {
         'isBase64Encoded': False,

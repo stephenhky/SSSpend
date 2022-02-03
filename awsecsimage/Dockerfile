@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 RUN pip install -U pip
 RUN pip install -r requirements.txt
-RUN pip install -U https://github.com/stephenhky/SSSpend
+RUN pip install -U git+https://github.com/stephenhky/SSSpend
 RUN pip install awslambdaric boto3
 
 ENTRYPOINT [ "/usr/local/bin/python", "-m", "awslambdaric" ]
